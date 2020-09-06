@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         initFragment(); //设置主fragment
         Log.e("11", "onCreate: "+"上传" );
         LogUtils.e("wangys");
+
     }
 
     private void initFragment() {
