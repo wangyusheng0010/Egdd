@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initFragment(); //设置主fragment
-        Log.e("11", "onCreate: "+"上传" );
-        LogUtils.e("wangys");
-        Log.e("333", "onCreate: "+"我是你爹" );
 
     }
 
