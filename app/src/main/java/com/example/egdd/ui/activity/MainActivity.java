@@ -10,6 +10,7 @@ import com.example.egdd.R;
 import com.example.egdd.ui.fragments.BabyListenFragment;
 import com.example.egdd.ui.fragments.BabyLookFragment;
 import com.example.egdd.ui.fragments.CacheFragment;
+import com.example.httplibrary.utils.LogUtils;
 import com.google.android.material.tabs.TabLayout;
 
 import butterknife.BindView;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initFragment(); //设置主fragment
         Log.e("11", "onCreate: "+"上传" );
+        LogUtils.e("wangys");
     }
 
     private void initFragment() {
