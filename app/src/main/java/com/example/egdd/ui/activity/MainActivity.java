@@ -1,6 +1,7 @@
 package com.example.egdd.ui.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initFragment(); //设置主fragment
-
+        Log.e("11", "onCreate: "+"上传" );
     }
 
     private void initFragment() {
