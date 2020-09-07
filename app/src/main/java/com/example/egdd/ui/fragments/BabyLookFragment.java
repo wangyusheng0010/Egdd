@@ -77,7 +77,6 @@ public class BabyLookFragment extends BaseMvpFragment<LookView, LookPresenter>im
         }
         fragments.add(partnerFragment);
 
-
     }
 
     @Override

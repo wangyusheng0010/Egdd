@@ -1,8 +1,17 @@
 package com.example.egdd.ui.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
@@ -20,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.bnb)
     TabLayout bnb;
+
     private FragmentManager manager;
     private BabyLookFragment babyLookFragment;
     private BabyListenFragment babyListenFragment;
@@ -31,10 +41,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initFragment(); //设置主fragment
-        Log.e("11", "onCreate: "+"上传" );
+        Log.e("11", "onCreate: " + "上传");
         LogUtils.e("wangys");
 
+
+
     }
+
+
 
     private void initFragment() {
         manager = getSupportFragmentManager();

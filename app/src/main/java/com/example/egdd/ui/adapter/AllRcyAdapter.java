@@ -20,7 +20,7 @@ public class AllRcyAdapter extends BaseQuickAdapter<LookDemo.AlbumsBean, BaseVie
 
     @Override
     protected void convert(@NonNull BaseViewHolder baseViewHolder, LookDemo.AlbumsBean albumsBean) {
-        baseViewHolder.setText(R.id.all_name,albumsBean.getName())
+        baseViewHolder.setText(R.id.all_name,albumsBean.getName()).addOnClickListener(R.id.all_name)
                 .setText(R.id.all_desc,albumsBean.getDescription())
                 .setText(R.id.all_count,"共"+albumsBean.getVideo_count()+"集");
         Glide.with(mContext).load(albumsBean.getImage_url()).into((ImageView) baseViewHolder.getView(R.id.all_iv));

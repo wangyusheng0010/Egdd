@@ -20,7 +20,8 @@ public class ChoiBottomAdapter extends BaseQuickAdapter<ChoiBottomDemo, BaseView
 
     @Override
     protected void convert(@NonNull BaseViewHolder baseViewHolder, ChoiBottomDemo choiBottomDemo) {
-        baseViewHolder.setText(R.id.bottom_name,choiBottomDemo.getItem().getName());
+        baseViewHolder.addOnClickListener(R.id.rl);
+        baseViewHolder.setText(R.id.bottom_name,choiBottomDemo.getItem().getName()).addOnLongClickListener(R.id.bottom_name);
         Glide.with(mContext).load(choiBottomDemo.getItem().getImage()).into((ImageView) baseViewHolder.getView(R.id.bottom_iv));
         if (choiBottomDemo.getItem().getDownload_type() == 1){
             Glide.with(mContext).load(R.drawable.ic_arrow_downward).into((ImageView) baseViewHolder.getView(R.id.bottom_load));
