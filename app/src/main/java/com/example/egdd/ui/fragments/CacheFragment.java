@@ -46,6 +46,13 @@ public class CacheFragment extends BaseFragment {
 
     public CacheFragment() {
         // Required empty public constructor
+
+
+
+
+
+
+
     }
 
 
