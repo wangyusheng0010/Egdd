@@ -20,6 +20,7 @@ import com.example.egdd.http.choihttp.ChoiBottomDemo;
 import com.example.egdd.http.choihttp.ChoiCenterDemo;
 import com.example.egdd.mvp.choimvp.ChoiPresenter;
 import com.example.egdd.mvp.choimvp.ChoiView;
+import com.example.egdd.ui.activity.video.ChioVideoActivity;
 import com.example.egdd.ui.activity.video.TingVideoActivity;
 import com.example.egdd.ui.adapter.ChoiBottomAdapter;
 import com.example.egdd.ui.adapter.ChoiCenterRcyAdapter;
@@ -107,7 +108,13 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
         bottomAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-
+                ChoiBottomDemo choiBottomDemo = list1.get(i);
+                String name = choiBottomDemo.getName();
+                String resource = choiBottomDemo.getItem().getResource();
+                Intent intent = new Intent(mActivity, ChioVideoActivity.class);
+                intent.putExtra("name1",name);
+                intent.putExtra("resource1",resource);
+                startActivity(intent);
             }
         });
     }

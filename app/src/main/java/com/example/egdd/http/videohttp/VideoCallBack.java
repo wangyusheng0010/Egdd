@@ -1,5 +1,7 @@
 package com.example.egdd.http.videohttp;
 
+import com.example.egdd.http.choihttp.ChoiBottomDemo;
+
 import java.util.List;
 
 /**
@@ -15,4 +17,5 @@ public interface VideoCallBack {
     void showLog(String str);
     void showToast(String str);
     void videoShowok(List<VideoBean> videoBeans);
+
 }

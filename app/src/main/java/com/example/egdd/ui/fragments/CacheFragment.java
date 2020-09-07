@@ -120,7 +120,7 @@ public class CacheFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mActivity, SettingActivity.class);
-                startActivity(intent);
+                mActivity.startActivity(intent);
             }
         });
     }

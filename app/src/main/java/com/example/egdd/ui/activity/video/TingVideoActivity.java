@@ -17,9 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.egdd.R;
+import com.example.egdd.http.choihttp.ChoiBottomDemo;
 import com.example.egdd.http.videohttp.VideoBean;
 import com.example.egdd.mvp.videomvp.VideoPresenter;
 import com.example.egdd.mvp.videomvp.VideoView;
+import com.example.egdd.ui.adapter.ChoiBottomAdapter;
 import com.example.egdd.ui.adapter.VideoAdapter;
 import com.example.httplibrary.utils.LogUtils;
 import com.example.mvplibrary.base.BaseMvpActivity;
@@ -41,7 +43,9 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
     RecyclerView videoTing;
     private ArrayList<VideoBean> videoBeans;
     private VideoAdapter adapter;
-    private int pos;
+    private int tingid;
+    private ArrayList<ChoiBottomDemo> choiBottomDemos;
+
 
     @Override
     protected void initData() {
@@ -53,14 +57,19 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
 
     private void initView() {
         videoTing.setLayoutManager(new LinearLayoutManager(this));
-        videoTing.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
+        videoTing.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+
+
         videoBeans = new ArrayList<>();
         adapter = new VideoAdapter(R.layout.vedeio_item_rcy, videoBeans);
         videoTing.setAdapter(adapter);
+
+
         initListener();
 
 
     }
+
     private void initListener() {
         adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
@@ -68,23 +77,22 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
                 Toast.makeText(TingVideoActivity.this, "播放视频", Toast.LENGTH_SHORT).show();
                 String resource = videoBeans.get(i).getResource();//播放的视频路径
                 String name = videoBeans.get(i).getName();
-                Intent intent = new Intent(TingVideoActivity.this, PlayActivity.class);
-                intent.putExtra("resource",resource);
-                intent.putExtra("playname",name);
+                Intent intent = new Intent(TingVideoActivity.this, Play1Activity.class);
+                intent.putExtra("resource", resource);
+                intent.putExtra("playname", name);
                 startActivity(intent);
             }
         });
     }
 
     private void initDatas() {
-        int tingid = getIntent().getIntExtra("tingid",0);//传进id
+        //传进id
+        tingid = getIntent().getIntExtra("tingid", 0);
         String tingname = getIntent().getStringExtra("tingname");//标题字
         toolbarTitname.setText(tingname);//修改
-//        int id = Integer.valueOf(tingid).intValue();
         mPresenter.getData(tingid);//获取数据mvp
-
-
     }
+
     private void initToolbar() {
         setSupportActionBar(toolbar);
         toolbarImg.setOnClickListener(new View.OnClickListener() {
@@ -97,13 +105,13 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_vedio,menu);
+        getMenuInflater().inflate(R.menu.menu_vedio, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.vedio_menu_item1:
 
                 break;

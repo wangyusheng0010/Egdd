@@ -1,5 +1,6 @@
 package com.example.egdd.mvp.videomvp;
 
+import com.example.egdd.http.choihttp.ChoiBottomDemo;
 import com.example.egdd.http.videohttp.VideoBean;
 import com.example.egdd.http.videohttp.VideoCallBack;
 import com.example.mvplibrary.model.ModleFractory;
@@ -32,7 +33,11 @@ public class VideoPresenter extends BasePresenter<VideoView> implements VideoCal
         mView.videoShowok(videoBeans);
     }
 
+
+
     public void getData(int id) {
         ModleFractory.creatModle(VideoModel.class).getDatas(this,getLifeCycle(),id);
     }
+
+
 }

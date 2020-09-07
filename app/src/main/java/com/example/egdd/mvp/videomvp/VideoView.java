@@ -1,5 +1,6 @@
 package com.example.egdd.mvp.videomvp;
 
+import com.example.egdd.http.choihttp.ChoiBottomDemo;
 import com.example.egdd.http.videohttp.VideoBean;
 import com.example.mvplibrary.view.BaseView;
 
@@ -16,5 +17,4 @@ import java.util.List;
  */
 public interface VideoView extends BaseView {
     void videoShowok(List<VideoBean> videoBeans);
-
 }

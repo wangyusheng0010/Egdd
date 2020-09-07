@@ -1,6 +1,8 @@
 package com.example.egdd.mvp.videomvp;
 
 import com.example.egdd.http.HttpCallBack;
+import com.example.egdd.http.choihttp.ChoiBottomDemo;
+import com.example.egdd.http.choihttp.ChoiCenterDemo;
 import com.example.egdd.http.videohttp.VideoBean;
 import com.example.egdd.http.videohttp.VideoCallBack;
 import com.example.httplibrary.client.HttpClient;
@@ -54,4 +56,6 @@ public class VideoModel implements BaseModel {
                     }
                 });
     }
+
+  
 }
