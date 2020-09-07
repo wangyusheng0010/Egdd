@@ -1,15 +1,15 @@
-package com.example.egdd.http.listenhttp;
+package com.example.egdd.http.listenhttp.Firsthttp;
 
 import java.util.List;
 
-public class ListenImageBean {
+public class ZhongBean {
     /**
-     * id : 258
-     * name : 哈利讲故事
-     * count : 117
-     * image : http://img5g22.ergedd.com/album/28_20170414114416_boht.jpg
-     * description : 故事基调轻松明快，配合丰富的动画效果，培养快乐智慧乖宝宝。
-     * square_image_url : http://img5g22.ergedd.com/audio_playlist/14445461363_1583998989978.png
+     * id : 276
+     * name : 巴塔木儿歌
+     * count : 79
+     * image : http://img5g22.ergedd.com/audio_playlist/77294775510_1493795959461.jpg
+     * description : 打造学习英语新途径，最萌动感儿歌，最完美英汉结合，宝宝轻松磨耳朵。
+     * square_image_url : http://img5g22.ergedd.com/audio_playlist/46991113358_1565692098349.jpg
      * sensitive : 0
      * watch_areas : ["1"]
      * free : 5

@@ -78,7 +78,7 @@ public class BabyListenFragment extends BaseMvpFragment<ListenView, ListenPresen
         list.add(new FirstFragment(listenBeans));
         for (int i = 0; i < listenBeans.size(); i++) {
             if (!listenBeans.get(i).getName().equals("百科"))
-                list.add(new TwoFragment(listenBeans.get(i)));
+                list.add(new TwoFragment(listenBeans.get(i).getId()));
         }
         adapter = new ListenVpAdapter(getChildFragmentManager(), 0, list);
         vp.setAdapter(adapter);

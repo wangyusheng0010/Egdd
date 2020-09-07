@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.egdd.R;
-import com.example.egdd.http.listenhttp.ZhongBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ZhongBean;
 
 import java.util.List;
 
@@ -21,6 +21,6 @@ public class ListenZhongAdapter extends BaseQuickAdapter<ZhongBean, BaseViewHold
     @Override
     protected void convert(@NonNull BaseViewHolder baseViewHolder, ZhongBean zhongBean) {
         baseViewHolder.setText(R.id.listen_zhong_title,zhongBean.getName());
-        Glide.with(mContext).load(zhongBean.getImage()).into((ImageView) baseViewHolder.getView(R.id.listen_zhong_iv));
+        Glide.with(mContext).load(zhongBean.getSquare_image_url()).into((ImageView) baseViewHolder.getView(R.id.listen_zhong_iv));
     }
 }
