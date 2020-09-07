@@ -7,20 +7,20 @@
     app:cardCornerRadius="@dimen/dp_5"
     app:cardUseCompatPadding="true">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
         <ImageView
+            android:scaleType="fitXY"
             android:id="@+id/listen_zhong_iv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY" />
+            android:layout_height="@dimen/dp_120"/>
         <TextView
+            android:layout_below="@+id/listen_zhong_iv"
             android:id="@+id/listen_zhong_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black" />
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

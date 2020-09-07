@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.egdd.R;
-import com.example.egdd.http.listenhttp.ListenBottomBean;
-import com.example.egdd.http.listenhttp.ListenImageBean;
-import com.example.egdd.http.listenhttp.ZhongBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ListenBottomBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ListenImageBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ZhongBean;
 
 import java.util.ArrayList;
 
@@ -49,13 +49,13 @@ public class ListenChoiAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == 0) {
-            View view = LayoutInflater.from(context).inflate(R.layout.listen_rcy_item1, parent);
+            View view = View.inflate(context, R.layout.listen_rcy_item1, null);
             return new ViewHolder1(view);
         } else if (viewType == 1) {
-            View view = LayoutInflater.from(context).inflate(R.layout.listen_rcy_item2, parent);
+            View view = View.inflate(context, R.layout.listen_rcy_item2, null);
             return new ViewHolder2(view);
         } else {
-            View view = LayoutInflater.from(context).inflate(R.layout.listen_rcy_item3, parent);
+            View view = View.inflate(context, R.layout.listen_rcy_item3, null);
             return new ViewHolder3(view);
         }
     }
@@ -64,18 +64,28 @@ public class ListenChoiAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (getItemViewType(position) == 0){
             ViewHolder1 holder1 = (ViewHolder1) holder;
-            Glide.with(context).load(imageBeans.get(0).getImage()).into(holder1.first_hali);
-            Glide.with(context).load(imageBeans.get(1).getImage()).into(holder1.first_pig);
-            Glide.with(context).load(imageBeans.get(2).getImage()).into(holder1.first_monkey);
+            if (imageBeans.size()>0) {
+                Glide.with(context).load(imageBeans.get(0).getImage()).into(holder1.first_hali);
+                Glide.with(context).load(imageBeans.get(1).getImage()).into(holder1.first_pig);
+                Glide.with(context).load(imageBeans.get(2).getImage()).into(holder1.first_monkey);
+            }
         }else if (getItemViewType(position) == 1){
+            ArrayList<ZhongBean> zhong = new ArrayList<>();
+            for (int i = 0; i < this.zhongBeans.size(); i++) {
+                if (i > 5){
+                    break;
+                }else {
+                    zhong.add(this.zhongBeans.get(i));
+                }
+            }
             ViewHolder2 holder2 = (ViewHolder2) holder;
             holder2.listen_choi_rcy.setLayoutManager(new GridLayoutManager(context,3));
-            ListenZhongAdapter adapter = new ListenZhongAdapter(R.layout.listen_zhong_item, zhongBeans);
+            ListenZhongAdapter adapter = new ListenZhongAdapter(R.layout.listen_zhong_item, zhong);
             holder2.listen_choi_rcy.setAdapter(adapter);
         }else {
             ViewHolder3 holder3 = (ViewHolder3) holder;
             ListenBottomBean bean = bottomBeans.get(position - 2);
-            Glide.with(context).load(bean).into(holder3.listen_iv);
+            Glide.with(context).load(bean.getImage()).into(holder3.listen_iv);
             holder3.listen_title.setText(bean.getName());
             holder3.listen_more.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -83,7 +93,7 @@ public class ListenChoiAdapter extends RecyclerView.Adapter {
                     //跳转fragment
                 }
             });
-            holder3.listen_bottom_rcy.setLayoutManager(new LinearLayoutManager(context));
+            holder3.listen_bottom_rcy.setLayoutManager(new GridLayoutManager(context,3));
             ListenBottomAdapter adapter = new ListenBottomAdapter(R.layout.listen_bottom_rcy, bottomBeans.get(position - 2).getPlaylists());
             holder3.listen_bottom_rcy.setAdapter(adapter);
         }

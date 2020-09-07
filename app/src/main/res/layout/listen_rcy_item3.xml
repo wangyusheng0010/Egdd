@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/listen_shang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_margin="@dimen/dp_5"
+            android:layout_centerVertical="true"
             android:id="@+id/listen_iv"
-            android:layout_width="@dimen/dp_10"
-            android:layout_height="@dimen/dp_10" />
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_margin="@dimen/dp_5" />
 
         <TextView
-            android:layout_marginTop="@dimen/dp_0_5"
-            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_centerVertical="true"
             android:id="@+id/listen_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
             android:layout_toRightOf="@+id/listen_iv" />
 
         <LinearLayout
-            android:layout_margin="@dimen/dp_5"
+            android:layout_centerVertical="true"
             android:id="@+id/listen_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true">
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dp_5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -36,12 +44,13 @@
                 android:layout_alignParentRight="true"
                 android:src="@drawable/ic_right_button" />
         </LinearLayout>
+    </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/listen_bottom_rcy"
-            android:layout_below="@+id/listen_iv"
-            />
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/listen_bottom_rcy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listen_shang" />
 
 </RelativeLayout>

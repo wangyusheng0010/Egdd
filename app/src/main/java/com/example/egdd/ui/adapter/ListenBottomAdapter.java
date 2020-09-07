@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.egdd.R;
-import com.example.egdd.http.listenhttp.ListenBottomBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ListenBottomBean;
 
 import java.util.List;
 
