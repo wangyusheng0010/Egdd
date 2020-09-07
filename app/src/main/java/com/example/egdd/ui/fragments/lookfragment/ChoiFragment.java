@@ -82,6 +82,7 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
         bottomRcy.setAdapter(bottomAdapter);
         mPresenter.getDemo();
         initListener();
+
     }
 
     private void initListener() {
