@@ -81,7 +81,7 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
         bottomAdapter = new ChoiBottomAdapter(R.layout.choi_bottom_item, list1);
         bottomRcy.setAdapter(bottomAdapter);
         mPresenter.getDemo();
-        initListener();
+        initListener();//点击事件
 
     }
 
@@ -95,8 +95,10 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
                 Toast.makeText(mActivity, "1111", Toast.LENGTH_SHORT).show();
                 ChoiCenterDemo choiCenterDemo = list.get(i);
                 int id = choiCenterDemo.getId();
+                String name = choiCenterDemo.getName();
                 Intent intent = new Intent(mActivity, TingVideoActivity.class);
                 intent.putExtra("tingid",id);
+                intent.putExtra("tingname",name);
                 startActivity(intent);
             }
         });
@@ -110,10 +112,6 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
         });
     }
 
-    @Override
-    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-    }
 
     @Override
     protected ChoiPresenter initPresenter() {

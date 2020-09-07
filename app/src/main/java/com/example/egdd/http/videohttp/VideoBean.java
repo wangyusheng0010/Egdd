@@ -356,6 +356,46 @@ public class VideoBean {
         this.watch_areas = watch_areas;
     }
 
+    @Override
+    public String toString() {
+        return "VideoBean{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", image_gif='" + image_gif + '\'' +
+                ", image_ver='" + image_ver + '\'' +
+                ", resource='" + resource + '\'' +
+                ", vsample=" + vsample +
+                ", play_count=" + play_count +
+                ", age_type=" + age_type +
+                ", singer='" + singer + '\'' +
+                ", rank=" + rank +
+                ", album_id=" + album_id +
+                ", status=" + status +
+                ", min_age=" + min_age +
+                ", max_age=" + max_age +
+                ", created_at='" + created_at + '\'' +
+                ", updated_at='" + updated_at + '\'' +
+                ", deleted_at=" + deleted_at +
+                ", copyright_sensitive=" + copyright_sensitive +
+                ", duration=" + duration +
+                ", publisher_id=" + publisher_id +
+                ", download_type=" + download_type +
+                ", copyright_contract_id=" + copyright_contract_id +
+                ", copyright_contract_start_date='" + copyright_contract_start_date + '\'' +
+                ", copyright_contract_end_date='" + copyright_contract_end_date + '\'' +
+                ", search_keyword='" + search_keyword + '\'' +
+                ", is_ad=" + is_ad +
+                ", ad_data=" + ad_data +
+                ", is_vip=" + is_vip +
+                ", srt_file_url='" + srt_file_url + '\'' +
+                ", type=" + type +
+                ", sensitive=" + sensitive +
+                ", albums=" + albums +
+                ", watch_areas=" + watch_areas +
+                '}';
+    }
+
     public static class VsampleBean {
         /**
          * status : 1
@@ -491,6 +531,20 @@ public class VideoBean {
 
         public void setVids(List<?> vids) {
             this.vids = vids;
+        }
+
+        @Override
+        public String toString() {
+            return "AlbumsBean{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", video_count=" + video_count +
+                    ", play_count=" + play_count +
+                    ", free=" + free +
+                    ", price=" + price +
+                    ", vip_price=" + vip_price +
+                    ", vids=" + vids +
+                    '}';
         }
     }
 }

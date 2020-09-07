@@ -10,7 +10,10 @@ import com.google.gson.JsonElement;
 import com.trello.rxlifecycle2.LifecycleProvider;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by ASUS
@@ -22,19 +25,9 @@ import java.util.List;
  * Description :T0D0
  */
 public class VideoModel implements BaseModel {
-
     public void getDatas(VideoCallBack callBack, LifecycleProvider lifeCycle, int id) {
-        HashMap<String, Object> map = new HashMap();
-        map.put("channel","new");
-        map.put("offset","0");
-        map.put("limit","20");
-        map.put("sensitive","8");
-        map.put("code","110114");
-        map.put("adtype","2");
-        map.put("ret","video");
         new HttpClient.Builder()
-                .setApiUrl("albums/"+id+"/videos?")
-                .setParamser(map)
+                .setApiUrl("albums/"+id+"/videos?channel=new&offset=0&limit=20&sensitive=8&code=110114&adtype=2&ret=video")
                 .setLifecycleProvider(lifeCycle)
                 .get()
                 .build()

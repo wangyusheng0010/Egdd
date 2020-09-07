@@ -29,7 +29,7 @@ public class VideoAdapter extends BaseQuickAdapter<VideoBean, BaseViewHolder> {
 
     @Override
     protected void convert(@NonNull BaseViewHolder baseViewHolder, VideoBean videoBean) {
-        baseViewHolder.setText(R.id.vedio_rcy_name,videoBean.getName());
+        baseViewHolder.setText(R.id.vedio_rcy_name,videoBean.getName()).addOnClickListener(R.id.com);
         Glide.with(mContext).load(videoBean.getImage()).into((ImageView) baseViewHolder.getView(R.id.vedio_rcy_img));
         if (videoBean.getDownload_type() == 1){
             Glide.with(mContext).load(R.drawable.ic_arrow_downward).into((ImageView) baseViewHolder.getView(R.id.vedio_rcy_load));

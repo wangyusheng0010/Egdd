@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.egdd"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -58,6 +58,8 @@ dependencies {
     //Glide 4.x 异步加载图片
     implementation 'com.github.bumptech.glide:glide:4.8.0'
 
+
+    implementation 'fm.jiecao:jiecaovideoplayer:5.5.2'
     //自动刷新
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'

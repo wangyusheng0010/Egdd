@@ -17,8 +17,6 @@ import java.util.List;
  * Description :T0D0
  */
 public class VideoPresenter extends BasePresenter<VideoView> implements VideoCallBack {
-
-
     @Override
     public void showLog(String str) {
         mView.showLog(str);
@@ -26,6 +24,7 @@ public class VideoPresenter extends BasePresenter<VideoView> implements VideoCal
 
     @Override
     public void showToast(String str) {
+
     }
 
     @Override
