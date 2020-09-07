@@ -1,6 +1,7 @@
 package com.example.egdd.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.example.egdd.R;
 import com.example.egdd.http.listenhttp.Firsthttp.ListenBottomBean;
 import com.example.egdd.http.listenhttp.Firsthttp.ListenImageBean;
 import com.example.egdd.http.listenhttp.Firsthttp.ZhongBean;
+import com.example.egdd.ui.activity.ListenUpActivity;
 
 import java.util.ArrayList;
 
@@ -72,7 +74,25 @@ public class ListenChoiAdapter extends RecyclerView.Adapter {
                 holder1.first_hali.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        Intent intent = new Intent(context, ListenUpActivity.class);
+                        intent.putExtra("hali",imageBeans.get(0));
+                        context.startActivity(intent);
+                    }
+                });
+                holder1.first_pig.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, ListenUpActivity.class);
+                        intent.putExtra("hali",imageBeans.get(1));
+                        context.startActivity(intent);
+                    }
+                });
+                holder1.first_monkey.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, ListenUpActivity.class);
+                        intent.putExtra("hali",imageBeans.get(2));
+                        context.startActivity(intent);
                     }
                 });
 

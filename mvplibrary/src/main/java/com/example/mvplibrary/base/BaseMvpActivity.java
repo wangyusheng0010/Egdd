@@ -16,10 +16,13 @@ public abstract class BaseMvpActivity<V extends BaseView, P extends BasePresente
     @Override
     protected void initEvent() {
         mPresenter = initPresenter();
+        initModel();
         if (mPresenter != null) {
             mPresenter.attacthView((V) this);
         }
     }
+
+    protected abstract void initModel();
 
     protected abstract P initPresenter();
 

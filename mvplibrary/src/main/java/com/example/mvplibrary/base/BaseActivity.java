@@ -26,12 +26,12 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         setContentView(initLayoutId());
         unbinder = ButterKnife.bind(this);
         initEvent();
-        initData();
+        initView();
     }
 
     protected abstract void initEvent();
 
-    protected abstract void initData();
+    protected abstract void initView();
 
     protected abstract int initLayoutId();
 

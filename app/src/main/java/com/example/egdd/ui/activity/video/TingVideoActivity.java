@@ -47,15 +47,11 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
     private ArrayList<ChoiBottomDemo> choiBottomDemos;
 
 
+
     @Override
-    protected void initData() {
+    public void initView() {
         initToolbar();
-        initView();
-        initDatas();
 
-    }
-
-    private void initView() {
         videoTing.setLayoutManager(new LinearLayoutManager(this));
         videoTing.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
@@ -63,7 +59,7 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
         videoBeans = new ArrayList<>();
         adapter = new VideoAdapter(R.layout.vedeio_item_rcy, videoBeans);
         videoTing.setAdapter(adapter);
-
+        initDatas();
 
         initListener();
 
@@ -125,6 +121,11 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
     @Override
     protected int initLayoutId() {//布局
         return R.layout.activity_ting_video;
+    }
+
+    @Override
+    protected void initModel() {
+        mPresenter.initModel();
     }
 
     @Override

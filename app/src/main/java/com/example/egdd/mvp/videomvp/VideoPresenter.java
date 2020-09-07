@@ -18,6 +18,13 @@ import java.util.List;
  * Description :T0D0
  */
 public class VideoPresenter extends BasePresenter<VideoView> implements VideoCallBack {
+
+    private VideoModel modle;
+
+    public void initModel(){
+        modle = ModleFractory.creatModle(VideoModel.class);
+    }
+
     @Override
     public void showLog(String str) {
         mView.showLog(str);
@@ -36,7 +43,7 @@ public class VideoPresenter extends BasePresenter<VideoView> implements VideoCal
 
 
     public void getData(int id) {
-        ModleFractory.creatModle(VideoModel.class).getDatas(this,getLifeCycle(),id);
+        modle.getDatas(this,getLifeCycle(),id);
     }
 
 

@@ -1,6 +1,8 @@
 package com.example.egdd.http.listenhttp.Firsthttp;
 
-public class ListenImageBean {
+import java.io.Serializable;
+
+public class ListenImageBean implements Serializable {
 
     /**
      * id : 95
