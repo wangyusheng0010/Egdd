@@ -98,6 +98,7 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
                 Intent intent = new Intent(mActivity, TingVideoActivity.class);
                 intent.putExtra("tingid",id);
                 startActivity(intent);
+
             }
         });
 
