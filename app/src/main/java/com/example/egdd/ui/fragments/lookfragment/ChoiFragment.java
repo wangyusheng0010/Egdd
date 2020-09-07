@@ -89,9 +89,9 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
         //图片点击事件
         pei.setOnClickListener(this);
         //条目点击事件网格布局
-        centerAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        centerAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
-            public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+            public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 Toast.makeText(mActivity, "1111", Toast.LENGTH_SHORT).show();
                 ChoiCenterDemo choiCenterDemo = list.get(i);
                 int id = choiCenterDemo.getId();
@@ -102,9 +102,9 @@ public class ChoiFragment extends BaseMvpFragment<ChoiView, ChoiPresenter> imple
         });
 
         //线性布局点击事件
-        bottomAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        bottomAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
-            public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+            public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
 
             }
         });

@@ -59,9 +59,9 @@ public class TingVideoActivity extends BaseMvpActivity<VideoView, VideoPresenter
     }
 
     private void initDatas() {
-        String tingid = getIntent().getStringExtra("tingid");
-        int id = Integer.valueOf(tingid).intValue();
-        mPresenter.getData(id);
+        int tingid = getIntent().getIntExtra("tingid",0);
+//        int id = Integer.valueOf(tingid).intValue();
+        mPresenter.getData(tingid);
     }
     private void initToolbar() {
         setSupportActionBar(toolbar);
