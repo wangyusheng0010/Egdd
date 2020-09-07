@@ -1,15 +1,16 @@
-package com.example.egdd.http.listenhttp;
+package com.example.egdd.http.listenhttp.Twohttp;
 
 import java.util.List;
 
-public class ZhongBean {
+public class TwoBean {
+
     /**
-     * id : 276
-     * name : 巴塔木儿歌
-     * count : 79
-     * image : http://img5g22.ergedd.com/audio_playlist/77294775510_1493795959461.jpg
-     * description : 打造学习英语新途径，最萌动感儿歌，最完美英汉结合，宝宝轻松磨耳朵。
-     * square_image_url : http://img5g22.ergedd.com/audio_playlist/46991113358_1565692098349.jpg
+     * id : 338
+     * name : 手指家族
+     * count : 31
+     * image : http://img5g22.ergedd.com/audio_playlist/57346360551_1547461400473.jpg
+     * description : 动动手指学英文，经典英文童谣Finger Family
+     * square_image_url : http://img5g22.ergedd.com/audio_playlist/17413388600_1547461404162.jpg
      * sensitive : 0
      * watch_areas : ["1"]
      * free : 5

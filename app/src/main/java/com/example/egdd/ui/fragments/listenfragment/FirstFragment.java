@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.egdd.R;
 import com.example.egdd.http.listenhttp.ListenBean;
-import com.example.egdd.http.listenhttp.ListenBottomBean;
-import com.example.egdd.http.listenhttp.ListenImageBean;
-import com.example.egdd.http.listenhttp.ZhongBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ListenBottomBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ListenImageBean;
+import com.example.egdd.http.listenhttp.Firsthttp.ZhongBean;
 import com.example.egdd.mvp.listenmvp.firstmvp.FirstPresenter;
 import com.example.egdd.mvp.listenmvp.firstmvp.FirstView;
 import com.example.egdd.ui.adapter.ListenChoiAdapter;
@@ -29,22 +29,24 @@ public class FirstFragment extends BaseMvpFragment<FirstView, FirstPresenter> im
 
     @BindView(R.id.first_rcy)
     RecyclerView rcy;
-    private ArrayList<ListenBean> beans = new ArrayList<>();
     private ListenChoiAdapter adapter;
+    private ArrayList<ZhongBean> zhongBeans;
+    private ArrayList<ListenBottomBean> bottomBeans;
+    private ArrayList<ListenImageBean> iamgeBeans;
 
     public FirstFragment(List<ListenBean> listenBeans) {
         // Required empty public constructor
-        beans.addAll(listenBeans);
     }
 
     @Override
     protected void initView() {
         rcy.setLayoutManager(new LinearLayoutManager(mActivity));
-        ArrayList<ZhongBean> zhongBeans = new ArrayList<>();
-        ArrayList<ListenBottomBean> bottomBeans = new ArrayList<>();
-        ArrayList<ListenImageBean> iamgeBeans = new ArrayList<>();
+        zhongBeans = new ArrayList<>();
+        bottomBeans = new ArrayList<>();
+        iamgeBeans = new ArrayList<>();
         adapter = new ListenChoiAdapter(mActivity, zhongBeans, bottomBeans, iamgeBeans);
         rcy.setAdapter(adapter);
+        mPresenter.getDemo();
     }
 
     @Override
@@ -70,5 +72,13 @@ public class FirstFragment extends BaseMvpFragment<FirstView, FirstPresenter> im
     @Override
     public void showToast(String str) {
         Toast.makeText(mActivity, str, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void getDemo(ArrayList<ZhongBean> list, ArrayList<ListenBottomBean> bottomBeans, ArrayList<ListenImageBean> imageBeans) {
+        zhongBeans.addAll(list);
+        this.bottomBeans.addAll(bottomBeans);
+        iamgeBeans.addAll(imageBeans);
+        adapter.notifyDataSetChanged();
     }
 }
