@@ -71,8 +71,7 @@ public class FirstModel implements BaseModel {
 
                     @Override
                     public void onSuccess(List<ListenBottomBean> bottomBeans) {
-                        ArrayList<ListenImageBean> iamgeBean = new ArrayList<>();
-                        getImage((ArrayList<ZhongBean>) zhongBeans, (ArrayList<ListenBottomBean>) bottomBeans, collBack, lifeCycle,258,iamgeBean);
+                        getImage((ArrayList<ZhongBean>) zhongBeans, (ArrayList<ListenBottomBean>) bottomBeans, collBack, lifeCycle);
                     }
 
                     @Override
@@ -82,14 +81,19 @@ public class FirstModel implements BaseModel {
                 });
     }
 
-    private void getImage(ArrayList<ZhongBean> zhongBeans, ArrayList<ListenBottomBean> bottomBeans, FirstCollBack collBack, LifecycleProvider lifeCycle,int id,ArrayList<ListenImageBean>imageBeans) {
-
+    private void getImage(ArrayList<ZhongBean> zhongBeans, ArrayList<ListenBottomBean> bottomBeans, FirstCollBack collBack, LifecycleProvider lifeCycle) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("types","promotion_audio_banner");
+        HashMap<String, Object> head = new HashMap<>();
+        head.put("Authorization","ergedd_android:Android");
         new HttpClient.Builder()
                 .get()
                 .setLifecycleProvider(lifeCycle)
-                .setApiUrl("audio_playlists/"+id)
+                .setHeadres(head)
+                .setApiUrl("app_configs")
+                .setParamser(map)
                 .build()
-                .request(new HttpCallBack<ListenImageBean>() {
+                .request(new HttpCallBack<List<ListenImageBean>>() {
                     @Override
                     public void onError(String message, int code) {
                         collBack.fild(message);
@@ -101,20 +105,13 @@ public class FirstModel implements BaseModel {
                     }
 
                     @Override
-                    public void onSuccess(ListenImageBean bottomBean) {
-                        imageBeans.add(bottomBean);
-                        if (id == 258){
-                            getImage(zhongBeans, bottomBeans, collBack, lifeCycle,261,imageBeans);
-                        }else if (id == 261){
-                            getImage(zhongBeans, bottomBeans, collBack, lifeCycle,194,imageBeans);
-                        }else if (id == 194){
-                            collBack.succeed(zhongBeans,bottomBeans,imageBeans);
-                        }
+                    public void onSuccess(List<ListenImageBean> imageBean) {
+                        collBack.succeed(zhongBeans,bottomBeans, (ArrayList<ListenImageBean>) imageBean);
                     }
 
                     @Override
-                    public ListenImageBean convert(JsonElement result) {
-                        return JsonUtils.jsonToClass(result, ListenImageBean.class);
+                    public List<ListenImageBean> convert(JsonElement result) {
+                        return JsonUtils.jsonToClassList(result, ListenImageBean.class);
                     }
                 });
     }

@@ -1,37 +1,44 @@
 package com.example.egdd.http.listenhttp.Firsthttp;
 
-import java.util.List;
-
 public class ListenImageBean {
+
     /**
-     * id : 258
-     * name : 哈利讲故事
-     * count : 117
-     * image : http://img5g22.ergedd.com/album/28_20170414114416_boht.jpg
-     * description : 故事基调轻松明快，配合丰富的动画效果，培养快乐智慧乖宝宝。
-     * square_image_url : http://img5g22.ergedd.com/audio_playlist/14445461363_1583998989978.png
-     * sensitive : 0
-     * watch_areas : ["1"]
-     * free : 5
-     * cost : 0
-     * price : 0
-     * expires_at : null
-     * vip_price : 0
+     * id : 95
+     * group : promotion_audio_banner
+     * field : left
+     * min_version :
+     * max_version :
+     * position : left
+     * title : 哈利讲故事
+     * channel :
+     * grade : 0
+     * rank :
+     * promotion_group :
+     * status : 1
+     * url : ergedd://audio/playlist/258
+     * bundle_id :
+     * image_url : http://img5g22.ergedd.com/admin/promotion/36688080337_1493808597896.jpg
+     * short_image_url :
+     * horizontal_image_url :
      */
 
     private int id;
-    private String name;
-    private int count;
-    private String image;
-    private String description;
-    private String square_image_url;
-    private int sensitive;
-    private int free;
-    private int cost;
-    private int price;
-    private Object expires_at;
-    private int vip_price;
-    private List<String> watch_areas;
+    private String group;
+    private String field;
+    private String min_version;
+    private String max_version;
+    private String position;
+    private String title;
+    private String channel;
+    private int grade;
+    private String rank;
+    private String promotion_group;
+    private String status;
+    private String url;
+    private String bundle_id;
+    private String image_url;
+    private String short_image_url;
+    private String horizontal_image_url;
 
     public int getId() {
         return id;
@@ -41,99 +48,131 @@ public class ListenImageBean {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getGroup() {
+        return group;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGroup(String group) {
+        this.group = group;
     }
 
-    public int getCount() {
-        return count;
+    public String getField() {
+        return field;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setField(String field) {
+        this.field = field;
     }
 
-    public String getImage() {
-        return image;
+    public String getMin_version() {
+        return min_version;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setMin_version(String min_version) {
+        this.min_version = min_version;
     }
 
-    public String getDescription() {
-        return description;
+    public String getMax_version() {
+        return max_version;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMax_version(String max_version) {
+        this.max_version = max_version;
     }
 
-    public String getSquare_image_url() {
-        return square_image_url;
+    public String getPosition() {
+        return position;
     }
 
-    public void setSquare_image_url(String square_image_url) {
-        this.square_image_url = square_image_url;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public int getSensitive() {
-        return sensitive;
+    public String getTitle() {
+        return title;
     }
 
-    public void setSensitive(int sensitive) {
-        this.sensitive = sensitive;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getFree() {
-        return free;
+    public String getChannel() {
+        return channel;
     }
 
-    public void setFree(int free) {
-        this.free = free;
+    public void setChannel(String channel) {
+        this.channel = channel;
     }
 
-    public int getCost() {
-        return cost;
+    public int getGrade() {
+        return grade;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
-    public int getPrice() {
-        return price;
+    public String getRank() {
+        return rank;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 
-    public Object getExpires_at() {
-        return expires_at;
+    public String getPromotion_group() {
+        return promotion_group;
     }
 
-    public void setExpires_at(Object expires_at) {
-        this.expires_at = expires_at;
+    public void setPromotion_group(String promotion_group) {
+        this.promotion_group = promotion_group;
     }
 
-    public int getVip_price() {
-        return vip_price;
+    public String getStatus() {
+        return status;
     }
 
-    public void setVip_price(int vip_price) {
-        this.vip_price = vip_price;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public List<String> getWatch_areas() {
-        return watch_areas;
+    public String getUrl() {
+        return url;
     }
 
-    public void setWatch_areas(List<String> watch_areas) {
-        this.watch_areas = watch_areas;
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getBundle_id() {
+        return bundle_id;
+    }
+
+    public void setBundle_id(String bundle_id) {
+        this.bundle_id = bundle_id;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public String getShort_image_url() {
+        return short_image_url;
+    }
+
+    public void setShort_image_url(String short_image_url) {
+        this.short_image_url = short_image_url;
+    }
+
+    public String getHorizontal_image_url() {
+        return horizontal_image_url;
+    }
+
+    public void setHorizontal_image_url(String horizontal_image_url) {
+        this.horizontal_image_url = horizontal_image_url;
     }
 }

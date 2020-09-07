@@ -65,9 +65,18 @@ public class ListenChoiAdapter extends RecyclerView.Adapter {
         if (getItemViewType(position) == 0){
             ViewHolder1 holder1 = (ViewHolder1) holder;
             if (imageBeans.size()>0) {
-                Glide.with(context).load(imageBeans.get(0).getImage()).into(holder1.first_hali);
-                Glide.with(context).load(imageBeans.get(1).getImage()).into(holder1.first_pig);
-                Glide.with(context).load(imageBeans.get(2).getImage()).into(holder1.first_monkey);
+                Glide.with(context).load(imageBeans.get(0).getImage_url()).into(holder1.first_hali);
+                Glide.with(context).load(imageBeans.get(1).getImage_url()).into(holder1.first_pig);
+                Glide.with(context).load(imageBeans.get(2).getImage_url()).into(holder1.first_monkey);
+
+                holder1.first_hali.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
+
             }
         }else if (getItemViewType(position) == 1){
             ArrayList<ZhongBean> zhong = new ArrayList<>();
