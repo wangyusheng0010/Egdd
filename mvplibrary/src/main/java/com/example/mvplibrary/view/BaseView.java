@@ -11,4 +11,5 @@ package com.example.mvplibrary.view;
 public interface BaseView {
     void showLog(String str);
     void showToast(String str);
+
 }

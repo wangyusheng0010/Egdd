@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/vedio_menu_item1" android:title="" android:icon="@drawable/ic_baseline_session" app:showAsAction="always"/>
+<item android:id="@+id/vedio_menu_item2" android:title="" android:icon="@drawable/ic_baseline_share" app:showAsAction="always"/>
+
+</menu>

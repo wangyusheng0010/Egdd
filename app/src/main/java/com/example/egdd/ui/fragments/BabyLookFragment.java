@@ -45,7 +45,6 @@ public class BabyLookFragment extends BaseMvpFragment<LookView, LookPresenter>im
         // Required empty public constructor
     }
 
-
     @Override
     protected int initLayoutId() {
         return R.layout.fragment_baby_look;
@@ -76,7 +75,6 @@ public class BabyLookFragment extends BaseMvpFragment<LookView, LookPresenter>im
             fragments.add(new AllFragment(lookDemos.get(i)));
         }
         fragments.add(partnerFragment);
-
 
     }
 

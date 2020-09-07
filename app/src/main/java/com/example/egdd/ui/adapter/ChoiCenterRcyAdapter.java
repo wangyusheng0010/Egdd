@@ -20,7 +20,7 @@ public class ChoiCenterRcyAdapter extends BaseQuickAdapter<ChoiCenterDemo, BaseV
 
     @Override
     protected void convert(@NonNull BaseViewHolder baseViewHolder, ChoiCenterDemo choiDemo) {
-        baseViewHolder.setText(R.id.center_name,choiDemo.getName());
+        baseViewHolder.setText(R.id.center_name,choiDemo.getName()).addOnClickListener(R.id.ting_ll);
         Glide.with(mContext).load(choiDemo.getIcon_url()).into((ImageView) baseViewHolder.getView(R.id.center_iv));
     }
 }
